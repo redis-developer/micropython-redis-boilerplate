@@ -138,3 +138,6 @@ dmypy.json
 *.bak
 *.swp
 *.log
+
+# Secrets
+secrets.py
