@@ -1,5 +1,6 @@
 import network
 import secrets
+import sys
 import time
 from picoredis import Redis, RedisError
 
@@ -15,10 +16,18 @@ while not wlan.isconnected() and wlan.status() >= 0:
     time.sleep(0.5)
 
 # We should now have a network connection so let's connect to Redis...
-r = Redis(host = secrets.REDIS_HOST, port = secrets.REDIS_PORT)
-
+try:
+    r = Redis(host = secrets.REDIS_HOST, port = secrets.REDIS_PORT)
+except OSError as e:
+    # Failed to connect to Redis, likely as it isn't listening at the 
+    # host and port defined in secrets.py.  e looks like this:
+    # [Errno 104] ECONNRESET
+    print(f"Issue connecting to Redis at {secrets.REDIS_HOST}:{secrets.REDIS_PORT}")
+    print(e)
+    sys.exit(1)
+    
+# Authenticate to Redis if needed, optionally with username and/or password.
 if len(secrets.REDIS_PASSWORD) > 0:
-    # Authenticate to Redis, optionally with username.
     if len(secrets.REDIS_USER) > 0:
         r.auth(secrets.REDIS_USER, secrets.REDIS_PASSWORD)
     else:
@@ -26,6 +35,9 @@ if len(secrets.REDIS_PASSWORD) > 0:
 
 while True:
     try:
+        # Call the Redis PING command and output the response.
+        # Replace with your application logic.
+        # See https://redis.io/commands/ for details of each Redis command.
         response = r.ping()
         print(response)
     except RedisError as ex:
