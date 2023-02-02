@@ -13,3 +13,8 @@ If you're not sure how to get the MicroPython runtime installed on your Pico W, 
 * If you find this useful, or have any questions... come chat with us in the `#internet-of-things` channel on the [Redis Discord server](https://discord.gg/redis).
 * If you need a Redis server, sign up for a free fully-functional 30mb cloud instance of Redis Stack [here](https://redis.com/try-free/).
 * Want to learn more about Redis?  Take a free course at [Redis University](https://university.redis.com).
+
+Projects using picoredis on the Raspberry Pi Pico W:
+
+* [Monitoring Redis Streams Consumer Group lag with LED display](https://github.com/simonprickett/redis-streams-lag-pi-pico-w)
+* [Sending temperature / humidity / light readings to Redis and controlling a fan](https://github.com/simonprickett/raspberry-pi-pico-redis)
