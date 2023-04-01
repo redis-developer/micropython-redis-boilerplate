@@ -4,7 +4,7 @@ A boilerplate [MicroPython](https://micropython.org/) script for getting started
 
 I'll add more details later!  For now, check out the comments in `main.py`.
 
-This project uses (and contains a copy of) the [picoredis](https://github.com/SpotlightKid/picoredis) Redis client by [Christopher Arndt](https://github.com/SpotlightKid).  picoredis is made available under the terms of the MIT license which also apply to this repository.
+This project uses (and contains a copy of) the [picoredis](https://github.com/SpotlightKid/picoredis) Redis client by [Christopher Arndt](https://github.com/SpotlightKid).  picoredis is made available under the terms of the MIT license which also applies to this repository.
 
 There are many ways to get this project up and running on your microcontroller.  I've tested it using a Raspberry Pi Pico W and [VSCode](https://code.visualstudio.com/) with the [Pico W Go extension](https://marketplace.visualstudio.com/items?itemName=paulober.pico-w-go) running on macOS Ventura.  Note that you'll need the W version of the Raspberry Pi Pico to be able to connect to wifi and reach the Redis Server.
 
